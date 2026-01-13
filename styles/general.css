@@ -1,0 +1,130 @@
+/*=======================
+=========================
+    * PROJECT NAME: BUSINESS DIRECTORY WEBSITE.
+    * PROJECT DESCRIPTION: A DIRECTORY WEBSITE...
+    * DATE: START => JAN 12 2026. END => 
+    * COLLABORATORS: "JAMAL", "FREEDOM", "FAVOUR".
+    * PROJECT AIM: TO LEARN HOW DEVELOPERS COLLABORATE & AND ADVANCE JS SKILLS.
+    
+    *******************
+    CSS: THIS CSS FILE CONTAINS ALL THE GENERAL STYLING FOR THIS PROJECT, SUCH AS THE COLORS, FONTS FAMILY, FONT SIZEA AND THE HEADER AND FOOTER STYLING. (NOTE) DO NOT TOUCH THIS FILE.
+        (NOTE) THIS STYLE IS DESKTOP FIRST
+=========================
+=========================
+*/
+
+:root{
+    /*======= COLORS ========== */
+    --white: #FFFFFF;
+    --red: #C71F37;
+    --light-red: #FAE8EB;
+    --red-hover: #DD2E3B;
+    --dark-100: #2b2b2b;
+    --dark-200: #212529;
+    --gray-bg: #F7F7F7;
+    --gray-cl: #fafafab3;
+
+    /*======= FONTS ========== */
+    --h1-fs: 3.4em;
+    --h2-fs: 2rem;
+    --h3-fs: 1.75rem;
+    --h5-fs: 1.25rem:
+    --p-fs: 1.25rem;
+    --a-fs: 14px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Jost", sans-serif;
+    line-height: 140%;
+}
+header, footer{
+    padding-inline: 4%;
+}
+section{
+    padding-inline: 8%;
+    width: 100%;
+    max-width: 100%;
+    padding-block: 80px;
+}
+h1{font-size: var(--h1-fs)}
+h2{font-size: var(--h2-fs)}
+h3{font-size: var(--h3-fs)}
+h5{font-size: var(--h5-fs)}
+a{font-size: var(--a-fs)}
+p{font-size: var(--p-fs)}
+
+/*========================
+    HEADER STYLE
+========================= */
+body{
+    background-color: #212529a3;
+}
+header, nav , ul{
+    display: flex;
+    align-items: center;
+}
+header{
+    padding-block: 15px;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    gap: 30px;
+    border-bottom: 0.5px rgb(166, 166, 166) solid;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+}
+.logo img{
+    width: 166px;
+}
+header a, svg{
+    font-weight: 600;
+    color: var(--gray-cl);
+}
+header li:hover{
+    a{
+        color: white;
+    }
+    svg{
+        color: white;
+    }
+}
+header .first-nav{
+    gap: 30px;
+}
+nav ul{
+    gap: 24px;
+}
+header .login-link, header button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+header button{
+    padding-inline: 25px;
+    padding-block: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--red);
+    cursor: pointer;
+    transition: 0.4s;
+
+    svg{
+        color: var(--gray-cl);
+    }
+}
+header button:hover{
+    background: white;
+    a{
+        color: black;
+    }
+
+    svg{
+        color: black
+    }
+}
