@@ -1,0 +1,47 @@
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+/* =================
+    HERO SECTION 
+    ============ */
+/* 
+.hero-section{
+    background: linear-gradient(rgba(0, 0, 0, 0.498), rgba(0, 0, 0, 0.502)), url(/images/Index-Images/banner-4-D7uJZLw4.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: var(--white);
+    margin-bottom: 8px;
+}
+.hero-section p{
+    color: var(--white);
+    font-size: 1.25rem ;
+    line-height: 1.8;
+}
+.search-box{
+    background-color: white;
+    padding: 11px;
+    margin-block: 58px 53px;
+    display: flex;
+}
+.search-box input{
+    padding: 6px 12px;
+}
+.search-box button{
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    background-color: var(--red);
+    border: none;
+    border-radius: 80px;
+} */
