@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    line-height: 1.8;
 }
 
 /* =================
@@ -129,4 +130,159 @@ h1{
 .down-icon svg{
     font-size: 25px;
     fill: white;
+}
+
+/* =================
+    CATEGORIES SECTION 
+    ============ */
+
+h2{
+    color: var(--dark-200);
+    width: fit-content;
+    margin-inline: auto;
+    position: relative;
+    margin-bottom: 8px;
+
+    span{
+        color: var(--red);
+    }
+}
+h2::before{
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: -5px;
+    right: -30px;
+    background-image: url(/images/Index-Images/flower.png);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    transform: rotate(45deg);  
+}
+section .heading-description{
+    font-size: 1.22rem;
+    text-align: center;
+}
+.categories-section .container{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(166px, 1fr ));
+    gap: 30px;
+    margin-top: 48px;
+}
+.categories-section h5{
+   z-index: 1;
+}
+.categories-section article{
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 4px gray;
+    cursor: pointer;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-1-rDEjtPu-.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.4s;
+    border-radius: 8px;
+
+
+    .icon {
+        width: 75px;
+        height: 75px;
+        background-color: var(--light-red);
+        border-radius: 50%;
+        margin: 15px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        position: relative;
+        z-index: 1;
+    }
+
+    .icon svg{
+        color: var(--red);
+        width: 35px;
+        height: 35px;
+        transition: 0.4s;
+    }
+
+    span{
+        background-color: rgb(233, 233, 233);
+        padding: 5px 12px;
+        font-size: 13px;
+        border-radius: 18px;
+        color: var(--dark-100);
+        font-weight: 500;
+        margin-top: 12px;
+        /* margin-bottom: 12px; */
+        transition: 0.4s;
+        z-index: 1;
+    }
+}
+.categories-section article::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    transition:  0.4s;
+    
+}
+.categories-section article:hover{
+    .icon{
+        background-color: rgba(255, 255, 255, 0.314);
+    }
+    .icon svg{
+        fill: white;
+    }
+    h5{
+        color: white;
+    }
+    span{
+        background-color: white;
+        color: var(--dark-100);
+    }
+}
+.categories-section article:hover::before{
+    background-color: transparent;
+}
+.categories-section article:nth-child(2){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-2-DV2N9sVt.jpg);
+}
+.categories-section article:nth-child(3){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-3-W2n-En_6.jpg);
+}
+.categories-section article:nth-child(4){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-4-DZXZoZxw.jpg);
+}
+.categories-section article:nth-child(5){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-5-IreyRmh0.jpg);
+}
+.categories-section article:nth-child(6){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-6-BAdrgdz8.jpg);
+}
+.categories-section article:nth-child(7){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-8-CyJ5-WiN.jpg);
+}
+.categories-section article:nth-child(8){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-7-BNJ0H8wv.jpg);
+}
+.categories-section article:nth-child(9){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-8-CyJ5-WiN.jpg);
+}
+.categories-section article:nth-child(10){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-10-BpnlDwaX.jpg);
+}
+.categories-section article:nth-child(11){
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/);
 }

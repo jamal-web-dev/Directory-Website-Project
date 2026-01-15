@@ -51,18 +51,15 @@ section{
     padding-block: 80px;
 }
 h1{font-size: var(--h1-fs)}
-h2{font-size: var(--h2-fs)}
+h2{font-size: var(--h2-fs); font-weight: 500;}
 h3{font-size: var(--h3-fs)}
 h5{font-size: var(--h5-fs)}
 a{font-size: var(--a-fs)}
-p{font-size: var(--p-fs)}
+p{font-size: var(--p-fs); color: var(--dark-200)}
 
 /*========================
     HEADER STYLE
 ========================= */
-body{
-    background-color: #212529a3;
-}
 header, nav , ul{
     display: flex;
     align-items: center;
