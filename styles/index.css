@@ -623,3 +623,134 @@ article .top-child .status-box{
     background-color: var(--red);
     color: white;
 }
+
+/*=========== REVIEW SECTION ============ */
+
+.review-section{
+    background-color: var(--gray-bg);
+}
+.review-section .review-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 48px;
+}
+.review-container article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    cursor: pointer;
+}
+article .review-content{
+    background-color: white;
+    text-align: center;
+    padding: 48px 30px;
+    border-radius: 8px;
+    position: relative;
+
+    span{
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+}
+.review-content .down-arrow{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    bottom: -25px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+}
+article .review-id{
+
+    text-align: center;
+
+    img{
+        width: 55px;
+        border-radius: 50%;
+        height: 55px;
+        object-fit: cover;
+    }
+    h4{
+        font-weight: 400;
+        font-size: 1.3rem;
+        margin: 0;
+    }
+}
+
+/* ========= EVENT SECTION ========== */
+.event-section .event-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.event-container article{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+article .event-img-box{
+    position: relative;
+    height: 250px;
+}
+.event-img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.event-img-box span.event-type{
+    padding: 5px 12px;
+    background-color: var(--light-red);
+    color: var(--red);
+    font-size: 13px;
+    border-radius: 15px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-weight: 500;
+}
+.event-img-box span.night{
+    background-color: #C3E0D3;
+    color: green;
+}
+.event-img-box span.work{
+    background-color: #fff3ce;
+    color: #FFC107;
+}
+.event-img-box .date{
+    width: fit-content;
+    /* height: 40px; */
+    background-color: var(--dark-100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px 12px;
+    gap: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 4px;
+    
+    h3{
+        padding: 0;
+        margin: 0;
+        line-height: normal;
+    }
+    span{
+        background: none;
+        color: white;
+        padding: 0;
+        font-size: 16px;
+        /* display: inline; */
+    }
+}
+.event-text-content span{
+    font-size: 14px;
+}
+
