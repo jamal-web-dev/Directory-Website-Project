@@ -125,3 +125,8 @@ header button:hover{
         color: black
     }
 }
+
+footer{
+    background-color: var(--dark-200);
+    
+}
