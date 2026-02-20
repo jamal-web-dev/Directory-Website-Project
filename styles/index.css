@@ -299,8 +299,9 @@ section .heading-description{
     /* =================
         POPULAR LISTING SECTION 
         ============ */
-        .popular-listing-section .container{
-            display: grid;
+
+.popular-listing-section .container{
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 53px;
     gap: 15px;
@@ -757,6 +758,7 @@ article .event-img-box{
 /* ==========SUBSCRIPTION SECTION ================ */
 .subscription-section{
     background-color: var(--red);
+    padding-block: 40px;
 }
 .subscription-section .container{
     display: flex;
