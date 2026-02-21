@@ -11,7 +11,7 @@ p{
     ============ */
 
 .hero-section{
-    background: linear-gradient(rgba(0, 0, 0, 0.495), rgba(0, 0, 0, 0.476)), url(/images/Index-Images/banner-4-D7uJZLw4.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.495), rgba(0, 0, 0, 0.476)), url(../images/Index-Images/banner-4-D7uJZLw4.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -194,7 +194,7 @@ section .heading-description{
     justify-content: center;
     box-shadow: 0 0 4px gray;
     cursor: pointer;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(/images/Index-Images/catt-1-rDEjtPu-.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484), rgba(0, 0, 0, 0.504)), url(../images/Index-Images/catt-1-rDEjtPu-.jpg);
     background-size: cover;
     background-position: center;
     transition: 0.4s;
