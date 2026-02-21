@@ -25,26 +25,20 @@ h2{
     animation-timeline: view();
     animation-range: entry 0% cover 55%;
 }
-.categories-section article, .review-container article{
+.review-container article{
     animation-name: slide-in;
     animation-timeline: view();
       animation-range: entry 0% cover 20%;
     animation-fill-mode: both;
 }
-.categories-section article:nth-child(2), .review-container article:nth-child(2){
+ .review-container article:nth-child(2){
     animation-range: entry 0% cover 30%;
 }
-.categories-section article:nth-child(3), .review-container article:nth-child(3){
+.review-container article:nth-child(3){
     animation-range: entry 10% cover 40%;
 }
-.categories-section article:nth-child(4), .review-container article:nth-child(4){
+.review-container article:nth-child(4){
     animation-range: entry 20% cover 50%;
-}
-.categories-section article:nth-child(5){
-    animation-range: entry 20% cover 60%;
-}
-.categories-section article:nth-child(6){
-    animation-range: entry 10% cover 65%;
 }
 
 .popular-listing-section .container article, .event-container article{

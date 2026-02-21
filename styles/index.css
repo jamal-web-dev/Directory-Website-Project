@@ -177,9 +177,14 @@ section .heading-description{
     gap: 24px;
     margin-top: 48px;
     padding: 10px;
+    /* animation-name: scroll-left; */
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 .categories-section .scroll-wrapper{
-    overflow-x: clip;
+    overflow-x: scroll;
+    scrollbar-width: thin
 }
 .categories-section h5{
    z-index: 1;
@@ -312,7 +317,8 @@ section .heading-description{
     width: 100%;
 }
 .popular-listing-section .container article{
-    transition: 0.5s
+    transition: 0.5s;
+    cursor: pointer;
 }
 .popular-listing-section .container article:hover{
     transform: translateY(-8px);
