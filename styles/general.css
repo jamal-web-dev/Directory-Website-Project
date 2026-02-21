@@ -44,10 +44,11 @@
 header, footer{
     padding-inline: 4%;
 }
+
 section{
     padding-inline: 8%;
     width: 100%;
-    max-width: 100%;
+    /* max-width: 100%; */
     padding-block: 80px;
 }
 h1{font-size: var(--h1-fs)}
@@ -193,9 +194,57 @@ footer .container{
         fill: var(--red);
     }
 }
+/* ============ RESPONSIV HEADER================= */
+.menu-icon svg{
+    width: 32px;
+    height: 32px;
+    fill: white;
+    cursor: pointer;
+}
+
+.mobile-nav{
+    position: absolute;
+    top: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    background-color: var(--dark-200);
+    left: -400px;
+    padding: 40px 30px;
+    transition: 0.4s;
+}
+.mobile-nav-active{
+    left: 0;
+}
+.mobile-nav ul{
+    flex-direction: column;
+     align-items: flex-start;
+    justify-content: flex-start;
+}
+.mobile-nav, .menu-icon{
+    display: none;
+}
+@media (width <= 860px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+    }
+    .mobile-nav, .menu-icon{
+        display: flex;
+    }    
+    .first-nav ul, .second-nav{
+        display: none;
+    }  
+    .logo img{
+    width: 140px;
+}
+}
 @media (width <= 517px){
     footer .container{
         flex-direction: column;
-    }
-    
+    }    
 }
