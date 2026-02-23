@@ -1,37 +1,44 @@
-// HEADER: SHOWING MENU ON CLICK
-const menuIcon = document.querySelector(".menu-icon");
-const nav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header")
+let listingContainer = document.querySelector(".container");
 
-menuIcon.addEventListener("click", ()=>{
-    nav.classList.toggle("mobile-nav-active");
-})
-window.addEventListener("scroll", ()=>{
-    if(window.scrollY > 90){
-        header.style.backgroundColor = "#212529";
-    }else{
-        header.style.backgroundColor = "transparent";
+let listingArray = [
+    {
+        name: "The Big Bumble Gym",
+        location: "Tokyo Japan",
+        phone: "+42 515 635 7865",
+        bgImg: "../images/Index-Images/list-1-D-r_BTD7.jpg",
+        ownerImg: "../images/Index-Images/team-1-Dk2b_Pxk.jpg",
+        category: {
+            type: "Fitness",
+            feature: "Featured",
+            availability: "open",
+            price: "$$$"
+        }
+    },
+    {
+        name: "Greenvally Real Estate",
+        location: "Paris France",
+        phone: "+42 515 635 7865",
+        bgImg: "../images/Index-Images/list-2-L5iYowFN.jpg",
+        ownerImg: "../images/Index-Images/team-2-CL-rmPku.jpg",
+        category: {
+            type: "Real Estate",
+            feature: "Featured",
+            availability: "open",
+            price: "$$$"
+        }
     }
-})
+];
 
-// Rendering Business Listing To Page 
-
-const listingContainer = document.querySelector(".popular-listing-section .container");
-
-async function fetchData(){
-    try{
-        const response = await fetch("global_business_directory.json");
-        const data = await response.json();
-        console.log(data);
-        const featuredData = data.slice(0, 3);
-
-        featuredData.forEach(listing =>{
-            let listingHtml = `
-                <article class="listing-card" data-id="${listing.id}">
-                    <div class="top-child" style="background-image: linear-gradient(rgba(0, 0, 0, 0.143), rgba(0,0,0,0.67)), url('${listing.image}')">
+listingContainer.innerHTML = '';
+listingArray.forEach( listing =>{
+    let listingHtml = `
+        <article class="listing-card">
+                    <div class="top-child" style="background-image: linear-gradient(rgba(0,0,0,0.37), rgba(0,0,0,0.67)), url(${listing.bgImg})">
                         <div class="status-box">
                             <div class="status">
-                                <span class="featured">Featured</span>
+                                <span class="open">${listing.category.availability}</span>
+                                <span class="price">${listing.category.price}</span>
+                                <span class="featured">${listing.category.feature}</span>
                             </div>
                             <div class="fav-icon">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="lh-0" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"></path></svg>
@@ -39,7 +46,7 @@ async function fetchData(){
                         </div>
                         <div class="info-box">
                             <div class="img">
-                                <img src="${listing.profileImage}" alt="owner">
+                                <img src="${listing.ownerImg}" alt="owner">
                             </div>
                             <div class="text">
                                 <h5>${listing.name}</h5>
@@ -55,37 +62,21 @@ async function fetchData(){
                         </div>
                     </div>
                     <div class="bottom-child">
-                        <div class="bus-category">
-                                <div class="icon">
-                                    <img src="images/Index-Images/category.png" alt="">
-                                </div>
-                                <h5>${listing.category}</h5>
-                        </div>
+                    <div class="bus-category">
+                            <div class="icon">
+                            <svg stroke="currentColor" fill="" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M96 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 160 0 64 0 160c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-64-32 0c-17.7 0-32-14.3-32-32l0-64c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c0-17.7 14.3-32 32-32l32 0 0-64zm448 0l0 64 32 0c17.7 0 32 14.3 32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 17.7-14.3 32-32 32l-32 0 0 64c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-160 0-64 0-160c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32zM416 224l0 64-192 0 0-64 192 0z"></path></svg>
+                            </div>
+                            <h5>${listing.category.type}</h5>
+                    </div>
 
-                        <div class="rating-box">
-                            ${generateRatingStarImage(listing.rating)}
-                        </div>
+                    <div class="icon-box">
+                            <img src="../images/Index-Images/eye.svg" alt="">
+                            <img src="../images/Index-Images/love.svg" alt="">
+                            <img src="../images/Index-Images/share.svg" alt="">
+                    </div>
                     </div>
                 </article>
-            `;
-            
-            function generateRatingStarImage(rating){
-                    const fullStars = Math.round(rating);
-                    let starsHtml = '';
-                    for(let i = 0; i<5; i++){
-                        if(i<fullStars){
-                            starsHtml += `<img src="images/Index-Images/rating-fill-star.png" alt="">`;
-                        }else {
-                            starsHtml += `<img src="images/Index-Images/rating-empy-star.png" class="empty-star"> `;
-                        }
-                    }
+    `;
 
-                    return starsHtml;
-                }
-                    listingContainer.innerHTML += listingHtml;
-                })
-    } catch(error){
-        console.log(error);
-    }
-}
-fetchData();
+    listingContainer.innerHTML += listingHtml;
+})

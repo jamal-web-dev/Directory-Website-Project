@@ -329,11 +329,11 @@ section .heading-description{
     background-size: cover;
     background-repeat: no-repeat;
     height: 270px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between
 
 }
 article .top-child .status-box{
@@ -354,17 +354,15 @@ article .top-child .status-box{
     padding: 2px 10px;
     border-radius: 4px;
 }
-.status-box span.open{
+.status-box span.featured{
     background-color: #27A860;
 }
-.status-box span.close{
-    background-color: #D73939;
-}
 .status-box .fav-icon{
-    background-color: rgba(255, 255, 255, 0.264);
+    background-color: var(--light-red);
     width: 40px;
     height: 40px;
     border-radius: 50%;
+
     display:flex;
     justify-content: center;
     align-items: center;
@@ -373,7 +371,8 @@ article .top-child .status-box{
         width: 25px;
         height: 25px;
         object-fit: cover;
-        stroke: 1px solid white;
+        fill: var(--red);
+ 
     }
 }
 .top-child .info-box{
@@ -405,21 +404,21 @@ article .top-child .status-box{
     }
 }
 .listing-card .bottom-child{
-    background-color: #F7F7F7;
+    background-color: #fae8ebc0;
     padding: 15px 16px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .bottom-child .bus-category{
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
 }
 .bus-category .icon{
-    background-color: #c71f3841;
+    background-color: transparent;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -427,9 +426,21 @@ article .top-child .status-box{
     align-items: center;
     justify-content: center;
 
-    svg{
-        fill: #C71F37;
+    img{
+        object-fit: cover;
+        width: 25px;
+        height: 25px;
     }
+}
+.bottom-child .rating-box{
+    gap: 4px;
+    align-items: center;
+}
+.bottom-child .rating-box img{
+    width: 20px;
+}
+.bottom-child .rating-box img.empty-star{
+    width: 15px;
 }
 .bus-category h5{
     font-weight: 600;
