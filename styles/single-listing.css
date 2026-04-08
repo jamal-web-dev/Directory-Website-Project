@@ -1,0 +1,154 @@
+header{
+    background-color: var(--dark-200);
+    border:none;
+}
+
+.heading-section{
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.heading-section .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; 
+    bottom: 18%;
+    left: 0;
+    right: 0;
+    padding-inline: 8%;
+}
+.container .text-child{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: white;
+
+    h2{
+        font-size: 2.4rem;
+    }
+}
+.text-child .img-box{
+    width: 90px;
+    height: 90;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}
+.cta-child button{
+    background-color: white;
+    color: var(--red);
+    padding: 12px 24px;
+    border: none;
+    font-size: 17px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.cta-child button:hover{
+    transform: translateY(-8px);
+}
+.content-box ul{
+    display: flex;
+    gap: 20px;
+}
+.heading-section .bottom-nav{
+    background-color: white;
+    padding: 22px 4%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+     width: 100%;
+} 
+.bottom-nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*=============ABOUT SECTION ========== */
+.about-section{
+    background-color: #F1F5F8;
+    padding-block: 48px;
+}
+.about-section .container{
+    display: flex;
+    gap: 48px;
+}
+h5{
+    color: var(--dark-100);
+    font-weight: 500;
+}
+.container .about-business{
+    flex: 2;
+    p{
+        line-height: 150%;
+    }
+}
+.about-business .description{
+    background-color: white;
+     border-radius: 4px;
+}
+.description .title, .description .content{
+    padding: 16px 24px;
+}
+.container .about-aurtor{
+    flex: 1;
+}
+.about-aurtor .aurtor{
+    background-color: white;
+    border-radius: 4px;
+}
+.about-aurtor img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.about-aurtor .aurtor-info-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    position: relative;
+    margin-top: -40px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    padding-bottom: 25px;
+}
+.aurtor-info-box img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+.about-aurtor ul{
+    display: block;
+    padding-bottom: 24px;
+}
+.about-aurtor ul li{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-inline: 24px;
+    padding-block: 16px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+
+    span{
+        color: var(--dark-100);
+        font-size: 16px;
+    }
+    a{
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--dark-100)
+    }
+}
