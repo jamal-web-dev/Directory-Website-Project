@@ -486,6 +486,7 @@ article .top-child .status-box{
     padding: 0 20px;
     border-radius: 4px;
     font-size: 17px;
+    color: var(--dark-100);
 }
 .text-box .input-box input::placeholder{
     font-size: 17px;

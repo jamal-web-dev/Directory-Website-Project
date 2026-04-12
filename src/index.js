@@ -14,6 +14,53 @@ window.addEventListener("scroll", ()=>{
     }
 })
 
+
+const ACCESS_KEY = "vC-KZDCTO6U7PcDl8efqxVBtuYoyNUtgMYjFjJ1JG0w";
+
+const cache = JSON.parse(localStorage.getItem("imageCache")) || {};
+
+async function getImage(category) {
+  // If category already cached
+  if (cache[category]) {
+    const images = cache[category];
+
+    // pick random image
+    return images[Math.floor(Math.random() * images.length)];
+  }
+
+  // Fetch multiple images (VERY IMPORTANT)
+  const res = await fetch(
+    `https://api.unsplash.com/search/photos?query=${category}&per_page=10&client_id=${ACCESS_KEY}`
+  );
+
+  const data = await res.json();
+
+  // Store all images
+  const images = data.results.map(img => img.urls.regular);
+
+  cache[category] = images;
+
+  // ✅ Save to localStorage (THIS is the important part)
+  localStorage.setItem("imageCache", JSON.stringify(cache));
+
+  // return random one
+  return images[Math.floor(Math.random() * images.length)];
+}
+
+// Generate ratiing Stars image        
+function generateRatingStarImage(rating){
+    const fullStars = Math.round(rating);
+    let starsHtml = '';
+    for(let i = 0; i<5; i++){
+        if(i<fullStars){
+            starsHtml += `<img src="images/Index-Images/rating-fill-star.png" alt="">`;
+        }else {
+            starsHtml += `<img src="images/Index-Images/rating-empy-star.png" class="empty-star"> `;
+        }
+    }
+
+    return starsHtml;
+}
 // Rendering Business Listing To Page 
 
 const listingContainer = document.querySelector(".popular-listing-section .container");
@@ -22,13 +69,15 @@ async function fetchData(){
     try{
         const response = await fetch("global_business_directory.json");
         const data = await response.json();
-        console.log(data);
         const featuredData = data.slice(0, 3);
 
-        featuredData.forEach(listing =>{
+
+        for (let listing of featuredData){
+            const image = await getImage(listing.category); // ✅ wait for image
+
             let listingHtml = `
                 <article class="listing-card" data-id="${listing.id}">
-                    <div class="top-child" style="background-image: linear-gradient(rgba(0, 0, 0, 0.143), rgba(0,0,0,0.67)), url('${listing.image}')">
+                    <div class="top-child" style="background-image: linear-gradient(rgba(0, 0, 0, 0.143), rgba(0,0,0,0.67)), url(${image})">
                         <div class="status-box">
                             <div class="status">
                                 <span class="featured">Featured</span>
@@ -39,7 +88,7 @@ async function fetchData(){
                         </div>
                         <div class="info-box">
                             <div class="img">
-                                <img src="${listing.profileImage}" alt="owner">
+                                <img src="${image}" alt="owner">
                             </div>
                             <div class="text">
                                 <h5>${listing.name}</h5>
@@ -68,24 +117,13 @@ async function fetchData(){
                     </div>
                 </article>
             `;
-            
-            function generateRatingStarImage(rating){
-                    const fullStars = Math.round(rating);
-                    let starsHtml = '';
-                    for(let i = 0; i<5; i++){
-                        if(i<fullStars){
-                            starsHtml += `<img src="images/Index-Images/rating-fill-star.png" alt="">`;
-                        }else {
-                            starsHtml += `<img src="images/Index-Images/rating-empy-star.png" class="empty-star"> `;
-                        }
-                    }
 
-                    return starsHtml;
-                }
-                    listingContainer.innerHTML += listingHtml;
-                })
-    } catch(error){
+            listingContainer.innerHTML += listingHtml;
+        }
+    }catch(error){
         console.log(error);
     }
 }
+
+
 fetchData();
