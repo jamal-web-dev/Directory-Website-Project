@@ -6,6 +6,7 @@
     <title>Single Listing Page: Restaurant</title>
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/single-listing.css">
+    <link rel="stylesheet" href="../styles/responsiveness/single-lis-res.css">
     <!-- GOOGLE FONTS LINK -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,8 +67,8 @@
                     <div class="content-box">
                         <h2>Liman Restaurant</h2>
                         <ul>
-                            <li>Old Paris, France</li>
-                            <li>⭐⭐⭐⭐⭐</li>
+                            <li class="address">Old Paris, France</li>
+                            <li class="rating-star">⭐⭐⭐⭐⭐</li>
                         </ul>
                     </div>
                 </div>
@@ -99,17 +100,10 @@
                             <span class="icon"></span>
                         </div>
                         <div class="content">
-                            <p>Welcome to ListingHub Directory, a breathtaking retreat nestled in the heart of Las Vegas. This exquisite villa offers a perfect blend of luxury, comfort, and tranquility, providing an unparalleled escape for those seeking an idyllic haven.  
-                                <br>
-                                <br>
-                                Enjoy panoramic views of lush landscapes, rolling hills, and distant mountains from the expansive windows and private balconies. Watch the sunrise or sunset paint the sky in a myriad of colors, creating a daily masterpiece just for you. Retreat to the sumptuous bedrooms, each thoughtfully designed for ultimate comfort. Crisp linens, plush pillows, and tasteful decor create a haven of relaxation, ensuring restful nights and rejuvenating mornings.</p>
+                            
                         </div>
                     </div>
-                    <div class="review-container">
-                        dkkfmldlf
-                    </div>
-                </div>
-                <div class="about-aurtor">
+                    <div class="about-aurtor display-on-mobile" >
                     <div class="aurtor">
                         <img src="../images/Index-Images/single-listing-auto-bg.jpg" alt="">
                         <div class="aurtor-info-box">
@@ -120,11 +114,52 @@
                         <ul>
                             <li>
                                 <span>Email</span>
-                                <a href="">shree.patel@gmail.com</a>
+                                <a href="" class="busEmail">shree.patel@gmail.com</a>
                             </li>
                             <li>
                                 <span>Phone No.</span>
-                                <a href="">+41 256 254 5487</a>
+                                <a href="" class="busPhone">+41 256 254 5487</a>
+                            </li>
+                            <li>
+                                <span>Website</span>
+                                <a href="" class="busWeb">www.webstie.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="form-container">
+                        <form action="">
+                            <div class="name-email-box">
+                                <input type="text" placeholder="Name">
+                                <input type="email" placeholder="Email">
+                            </div>
+                            <div class="message-box">
+                                <textarea placeholder="Write Message" rows="4"></textarea>
+                                <button>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="about-aurtor display-on-desktop
+                    <div class="aurtor">
+                        <img src="../images/Index-Images/single-listing-auto-bg.jpg" alt="">
+                        <div class="aurtor-info-box">
+                            <img src="../images/Index-Images/team-1-Dk2b_Pxk.jpg" alt="autor" class="autor-img">
+                            <span>Added By</span>
+                            <h4>Shree K. Patel</h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <span>Email</span>
+                                <a href="" class="busEmail">shree.patel@gmail.com</a>
+                            </li>
+                            <li>
+                                <span>Phone No.</span>
+                                <a href="" class="busPhone">+41 256 254 5487</a>
+                            </li>
+                            <li>
+                                <span>Website</span>
+                                <a href="" class="busWeb">www.webstie.com</a>
                             </li>
                         </ul>
                     </div>

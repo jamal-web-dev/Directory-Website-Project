@@ -138,12 +138,11 @@ async function fetchBusinessData(){
         const data = await response.json();
         const featuredData = data.slice(0, 12);
 
-
         for (let listing of featuredData){
             const image = await getImage(listing.category); // ✅ wait for image
-
+    
             let listingHtml = `
-                <article class="listing-card" data-id="${listing.id}">
+                <article class="listing-card" data-id="${listing.id}" data-img="${image}">
                     <div class="top-child" style="background-image: linear-gradient(rgba(0, 0, 0, 0.143), rgba(0,0,0,0.67)), url(${image})">
                         <div class="status-box">
                             <div class="status">
@@ -198,9 +197,14 @@ function getListingContainer(listingContainer){
     listingCards.forEach((card)=>{
         card.onclick = ()=>{
            let id = card.dataset.id;
+           let img = card.dataset.img;
+           saveListingImgToLocalStorage(img);
             moveToSingleListingPage(id)
         }
     })
+}
+function saveListingImgToLocalStorage(img){
+    localStorage.setItem("listinImage", JSON.stringify(img) )
 }
 function moveToSingleListingPage(id){
     window.location = `single-listing.html?id=${id}`;

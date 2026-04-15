@@ -7,6 +7,7 @@ header{
     height: 100vh;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
 }
 .heading-section .container{
@@ -18,6 +19,9 @@ header{
     left: 0;
     right: 0;
     padding-inline: 8%;
+}
+.rating-star img{
+    width: 20px;
 }
 .container .text-child{
     display: flex;
@@ -91,15 +95,65 @@ h5{
         line-height: 150%;
     }
 }
-.about-business .description{
+.about-business .description, .about-business .form-container{
     background-color: white;
      border-radius: 4px;
+}
+.about-business .form-container{
+    margin-top: 15px;
+    padding: 16px 24px;
+}
+.about-business .form-container form{
+    display: flex;
+    justify-content: center;
+    gap: 22px;  
+    /* align-items: center; */
+    flex-direction: column  ;
+
+    input, textarea{
+        flex: 1.5;
+        background-color: white;
+        outline: none;
+        border: 0.4px solid var(--dark-100);
+        padding: 8px 20px;
+        border-radius: 4px;
+        font-size: 17px;
+        color: var(--dark-100);
+    }
+
+    button{
+        padding: 12px 24px;
+        border-radius: 4px;
+        background-color: var(--red);
+        color: white;
+        border: none;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    button:hover{
+        transform: translateY(-4px);
+    }
+}
+.form-container .name-email-box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-container .message-box{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex: 1
+
 }
 .description .title, .description .content{
     padding: 16px 24px;
 }
 .container .about-aurtor{
     flex: 1;
+    background-color: white;
+    height: fit-content;
 }
 .about-aurtor .aurtor{
     background-color: white;
@@ -122,6 +176,7 @@ h5{
     margin-top: -40px;
     border-bottom: 1px solid rgb(202, 202, 202);
     padding-bottom: 25px;
+    /* background-color: white; */
 }
 .aurtor-info-box img{
     width: 80px;
@@ -151,4 +206,8 @@ h5{
         font-weight: 500;
         color: var(--dark-100)
     }
+}
+.display-on-mobile {
+    margin-top: 35px;
+    display: none;
 }

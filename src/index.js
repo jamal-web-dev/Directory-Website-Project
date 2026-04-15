@@ -74,6 +74,7 @@ async function fetchData(){
 
         for (let listing of featuredData){
             const image = await getImage(listing.category); // ✅ wait for image
+            saveListingImgToLocalStorage(image);
 
             let listingHtml = `
                 <article class="listing-card" data-id="${listing.id}">
@@ -119,11 +120,27 @@ async function fetchData(){
             `;
 
             listingContainer.innerHTML += listingHtml;
+            getListingContainer(listingContainer)
+
         }
     }catch(error){
         console.log(error);
     }
 }
 
-
+function getListingContainer(listingContainer){
+    const listingCards = listingContainer.querySelectorAll(".listing-card");
+    listingCards.forEach((card)=>{
+        card.onclick = ()=>{
+           let id = card.dataset.id;
+            moveToSingleListingPage(id)
+        }
+    })
+}
+function saveListingImgToLocalStorage(img){
+    localStorage.setItem("listinImage", JSON.stringify(img) )
+}
+function moveToSingleListingPage(id){
+    window.location = `pages/single-listing.html?id=${id}`;
+}
 fetchData();
