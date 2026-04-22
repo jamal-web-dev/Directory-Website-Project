@@ -19,7 +19,14 @@
   .heading-section .bottom-nav{
     display: none;
   }
-   h2{
-    font-size: 20px;
+  .container .text-child{
+    h2{
+        font-size: 2rem;
+    }
+  }
+}
+@media (width <= 470px){
+  .text-child .img-box{
+    display: none;
   }
 }

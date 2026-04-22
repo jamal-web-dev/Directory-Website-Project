@@ -144,3 +144,34 @@ function moveToSingleListingPage(id){
     window.location = `pages/single-listing.html?id=${id}`;
 }
 fetchData();
+
+
+// Making The Search Input Functional
+const inputName= document.querySelector(".bus-input");
+const inputLocation= document.querySelector(".bus-location");
+const searchButton = document.querySelector(".search-btn");
+
+// async function fetchSearchData(){
+//     try{
+//         const response = await fetch("global_business_directory.json");
+//         const data = await response.json();
+//         return data;
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
+async function searchBuss(){
+    let nameValue = inputName.value.toLowerCase().trim();
+    let locationValue = inputLocation.value.toLowerCase().trim();
+    if(nameValue == "" && locationValue == "") {
+        alert("Input Business Name you are looking for")
+        return;
+    }
+    window.location = `pages/listing-page.html?find=${nameValue}&where=${locationValue}`;
+    nameValue = "";
+    locationValue = "";
+}
+
+searchButton.addEventListener("click", ()=>{
+    searchBuss()
+})
