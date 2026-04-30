@@ -1,0 +1,13 @@
+header{
+  background-color: var(--dark-200);
+}
+
+.side-bar{
+  position: absolute;
+  border: solid black;
+  left: 0;
+  width: 200px;
+   background-color: var(--dark-200);
+  top: 0;
+  bottom: 0;
+}

@@ -1,0 +1,32 @@
+@media (width<= 860px) {
+  .heading-section .container{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .about-section .container{
+    flex-direction: column;
+  }
+  .display-on-mobile {
+    display: block;
+  }
+   .display-on-desktop{
+    display: none;
+   }
+}
+@media (width <= 600px){
+  .heading-section .bottom-nav{
+    display: none;
+  }
+  .container .text-child{
+    h2{
+        font-size: 2rem;
+    }
+  }
+}
+@media (width <= 470px){
+  .text-child .img-box{
+    display: none;
+  }
+}

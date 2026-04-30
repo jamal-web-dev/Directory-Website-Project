@@ -1,22 +1,19 @@
-// HEADER: SHOWING MENU ON CLICK
-const menuIcon = document.querySelector(".menu-icon");
-const nav = document.querySelector(".mobile-nav");
-const header = document.querySelector("header")
-
-menuIcon.addEventListener("click", ()=>{
-    nav.classList.toggle("mobile-nav-active");
-})
 window.addEventListener("scroll", ()=>{
-    if(window.scrollY > 90){
+    if(window.scrollY >= 0 || window.scrollY <= 0 ){
         header.style.backgroundColor = "#212529";
-    }else{
-        header.style.backgroundColor = "transparent";
     }
 })
+document.addEventListener("DOMContentLoaded", () => {
+    fetchBusinessData();
+});
 
+const params = new URLSearchParams(window.location.search);
+const find = String(params.get("find"));
+const where = String(params.get("where"));
+
+const listingContainer = document.querySelector(".container");
 
 const ACCESS_KEY = "vC-KZDCTO6U7PcDl8efqxVBtuYoyNUtgMYjFjJ1JG0w";
-
 const cache = JSON.parse(localStorage.getItem("imageCache")) || {};
 
 async function getImage(category) {
@@ -53,9 +50,9 @@ function generateRatingStarImage(rating){
     let starsHtml = '';
     for(let i = 0; i<5; i++){
         if(i<fullStars){
-            starsHtml += `<img src="images/Index-Images/rating-fill-star.png" alt="">`;
+            starsHtml += `<img src="../images/Index-Images/rating-fill-star.png" alt="">`;
         }else {
-            starsHtml += `<img src="images/Index-Images/rating-empy-star.png" class="empty-star"> `;
+            starsHtml += `<img src="../images/Index-Images/rating-empy-star.png" class="empty-star"> `;
         }
     }
 
@@ -63,21 +60,17 @@ function generateRatingStarImage(rating){
 }
 // Rendering Business Listing To Page 
 
-const listingContainer = document.querySelector(".popular-listing-section .container");
-
-async function fetchData(){
+async function fetchBusinessData(){
     try{
-        const response = await fetch("global_business_directory.json");
+        const response = await fetch("../global_business_directory.json");
         const data = await response.json();
-        const featuredData = data.slice(0, 3);
-
+        const featuredData = data.slice(0, 12);
 
         for (let listing of featuredData){
             const image = await getImage(listing.category); // ✅ wait for image
-            saveListingImgToLocalStorage(image);
-
+    
             let listingHtml = `
-                <article class="listing-card" data-id="${listing.id}">
+                <article class="listing-card" data-id="${listing.id}" data-img="${image}">
                     <div class="top-child" style="background-image: linear-gradient(rgba(0, 0, 0, 0.143), rgba(0,0,0,0.67)), url(${image})">
                         <div class="status-box">
                             <div class="status">
@@ -107,7 +100,7 @@ async function fetchData(){
                     <div class="bottom-child">
                         <div class="bus-category">
                                 <div class="icon">
-                                    <img src="images/Index-Images/category.png" alt="">
+                                    <img src="../images/Index-Images/category.png" alt="">
                                 </div>
                                 <h5>${listing.category}</h5>
                         </div>
@@ -120,19 +113,20 @@ async function fetchData(){
             `;
 
             listingContainer.innerHTML += listingHtml;
-            getListingContainer(listingContainer)
-
         }
+        getListingContainer(listingContainer);
     }catch(error){
         console.log(error);
     }
 }
-
 function getListingContainer(listingContainer){
     const listingCards = listingContainer.querySelectorAll(".listing-card");
+    // console.log(listingCards);
     listingCards.forEach((card)=>{
         card.onclick = ()=>{
            let id = card.dataset.id;
+           let img = card.dataset.img;
+           saveListingImgToLocalStorage(img);
             moveToSingleListingPage(id)
         }
     })
@@ -141,37 +135,12 @@ function saveListingImgToLocalStorage(img){
     localStorage.setItem("listinImage", JSON.stringify(img) )
 }
 function moveToSingleListingPage(id){
-    window.location = `pages/single-listing.html?id=${id}`;
+    window.location = `single-listing.html?id=${id}`;
 }
-fetchData();
-
-
-// Making The Search Input Functional
-const inputName= document.querySelector(".bus-input");
-const inputLocation= document.querySelector(".bus-location");
-const searchButton = document.querySelector(".search-btn");
-
-// async function fetchSearchData(){
-//     try{
-//         const response = await fetch("global_business_directory.json");
-//         const data = await response.json();
-//         return data;
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
-async function searchBuss(){
-    let nameValue = inputName.value.toLowerCase().trim();
-    let locationValue = inputLocation.value.toLowerCase().trim();
-    if(nameValue == "" && locationValue == "") {
-        alert("Input Business Name you are looking for")
-        return;
-    }
-    window.location = `pages/listing-page.html?find=${nameValue}&where=${locationValue}`;
-    nameValue = "";
-    locationValue = "";
-}
-
-searchButton.addEventListener("click", ()=>{
-    searchBuss()
+listingContainer.addEventListener("click", (e)=>{
+    const id = e.target.dataset.id;
+    console.log(id)
 })
+
+
+

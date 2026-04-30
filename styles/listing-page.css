@@ -1,0 +1,19 @@
+header{
+    background-color: var(--dark-200);
+}
+.listing-section{
+    padding-top: 150px;
+}
+.more-button{
+    background-color: var(--red-hover);
+    padding: 8px 16px;
+    color: white;
+    display: block;
+    margin-inline: auto;
+    border: none;
+    border-radius: 4px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 38px;
+
+}
