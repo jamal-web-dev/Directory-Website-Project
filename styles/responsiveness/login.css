@@ -1,0 +1,8 @@
+@media (width <= 560px) {
+  .container{
+    width: 100%;
+  }
+  body{
+    padding-inline: 20px;
+  }
+}
