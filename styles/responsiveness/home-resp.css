@@ -76,10 +76,6 @@
     
       grid-template-columns: repeat(2, 1fr);
     }
-    .categories-section .container{
-        display: grid;
-        grid-template-columns: repeat(12, 200px);
-    }
 }
 @media (width <= 900px){
     
@@ -97,10 +93,6 @@
     }
      .search-box{
         width: 100%;
-    }
-    .categories-section .container{
-        display: grid;
-        grid-template-columns: repeat(12, 225px);
     }
     h2{
         font-size: 1.8rem;

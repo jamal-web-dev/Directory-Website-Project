@@ -176,3 +176,57 @@ async function searchBuss(){
 searchButton.addEventListener("click", ()=>{
     searchBuss()
 })
+
+// CATEGORY CAROUSEL
+const categoryCarousel = document.querySelector(".category-carousel");
+
+if (categoryCarousel) {
+    const categoryViewport = categoryCarousel.querySelector(".scroll-wrapper");
+    const categoryTrack = categoryCarousel.querySelector(".container");
+    const previousCategoryButton = categoryCarousel.querySelector(".carousel-control-prev");
+    const nextCategoryButton = categoryCarousel.querySelector(".carousel-control-next");
+    let autoplayId;
+
+    const getSlideDistance = () => {
+        const firstCard = categoryTrack.querySelector("article");
+        const gap = Number.parseFloat(getComputedStyle(categoryTrack).gap) || 0;
+        return firstCard ? firstCard.getBoundingClientRect().width + gap : categoryViewport.clientWidth;
+    };
+
+    const moveCarousel = (direction) => {
+        const atStart = categoryViewport.scrollLeft <= 1;
+        const atEnd = categoryViewport.scrollLeft + categoryViewport.clientWidth >= categoryViewport.scrollWidth - 1;
+
+        if ((direction > 0 && atEnd) || (direction < 0 && atStart)) {
+            categoryViewport.scrollTo({ left: direction > 0 ? 0 : categoryViewport.scrollWidth, behavior: "smooth" });
+            return;
+        }
+
+        categoryViewport.scrollBy({ left: direction * getSlideDistance(), behavior: "smooth" });
+    };
+
+    const stopAutoplay = () => window.clearInterval(autoplayId);
+    const startAutoplay = () => {
+        stopAutoplay();
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            autoplayId = window.setInterval(() => moveCarousel(1), 4500);
+        }
+    };
+
+    previousCategoryButton.addEventListener("click", () => moveCarousel(-1));
+    nextCategoryButton.addEventListener("click", () => moveCarousel(1));
+    categoryViewport.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+            moveCarousel(event.key === "ArrowLeft" ? -1 : 1);
+        }
+    });
+    categoryCarousel.addEventListener("mouseenter", stopAutoplay);
+    categoryCarousel.addEventListener("mouseleave", startAutoplay);
+    categoryCarousel.addEventListener("focusin", stopAutoplay);
+    categoryCarousel.addEventListener("focusout", (event) => {
+        if (!categoryCarousel.contains(event.relatedTarget)) startAutoplay();
+    });
+
+    startAutoplay();
+}

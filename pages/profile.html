@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/animations.css" />
     <link rel="stylesheet" href="../styles/dashboard.css" />
     <link rel="stylesheet" href="../styles/profile.css" />
+    <link rel="stylesheet" href="../styles/responsiveness/dashboard.css" />
     <!-- GOOGLE FONTS LINK -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +19,15 @@
   </head>
   <body>
     <header>
+      <button class="sidebar-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dashboard-sidebar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
       <h2>Welcome Jamal</h2>
     </header>
-    <aside>
+    <aside id="dashboard-sidebar" aria-label="Dashboard navigation">
+      <button class="sidebar-close" type="button" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+      </button>
       <img src="../images/general-images/logo-white.svg" alt="" />
       <ul>
         <a href="" class="active"><li>🛖 Dashboard</li></a>
@@ -30,6 +37,7 @@
         <a href=""><li>📲 Logout</li></a>
       </ul>
     </aside>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
     <main>
       <h2>My Profile</h2>
       <form action="">
@@ -43,10 +51,10 @@
         </div>
         <div class="phone-email">
           <input type="password" placeholder="Password">
-          <input type="text" placeholder="Website URL">
         </div>
         <input type="submit" value="Save" class="btn">
       </form>
     </main>
+    <script src="../src/dashboard.js"></script>
   </body>
 </html>

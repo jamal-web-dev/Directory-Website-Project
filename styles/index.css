@@ -172,28 +172,70 @@ section .heading-description {
   font-size: 1.22rem;
   text-align: center;
 }
-.categories-section .container{
-    display: grid;
-    grid-template-columns: repeat(12, 166px);
-    position: relative;
-    /* left: -191px; */
-    gap: 24px;
-    margin-top: 48px;
-    padding: 10px;
-    /* animation-name: scroll-left; */
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+.category-carousel {
+  position: relative;
+  margin-top: 48px;
 }
-.categories-section .scroll-wrapper{
-    overflow-x: scroll;
-    scrollbar-width: thin
+.categories-section .scroll-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.categories-section .scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.categories-section .container {
+  display: flex;
+  gap: 24px;
+  padding: 10px;
+}
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--dark-200);
+  background-color: var(--white);
+  box-shadow: 0 3px 14px rgba(33, 37, 41, 0.22);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.carousel-control:hover {
+  color: var(--white);
+  background-color: var(--red);
+}
+.carousel-control:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+.carousel-control svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+.carousel-control-prev {
+  left: -11px;
+}
+.carousel-control-next {
+  right: -11px;
 }
 .categories-section h5 {
   z-index: 1;
 }
 .categories-section article {
   position: relative;
+  flex: 0 0 clamp(190px, 20vw, 250px);
   padding: 20px;
   text-align: center;
   display: flex;
@@ -209,6 +251,7 @@ section .heading-description {
   background-position: center;
   transition: 0.4s;
   border-radius: 8px;
+  scroll-snap-align: start;
 
   .icon {
     width: 75px;
@@ -272,6 +315,21 @@ section .heading-description {
 }
 .categories-section article:hover::before {
   background-color: transparent;
+}
+@media (width <= 700px) {
+  .categories-section article {
+    flex-basis: min(78vw, 260px);
+  }
+  .carousel-control {
+    width: 36px;
+    height: 36px;
+  }
+  .carousel-control-prev {
+    left: -8px;
+  }
+  .carousel-control-next {
+    right: -8px;
+  }
 }
 .categories-section article:nth-child(2) {
   background-image:

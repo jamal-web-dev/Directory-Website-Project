@@ -26,9 +26,17 @@ aside{
   top: 0;
   bottom: 0;
   padding: 28px;
+  z-index: 60;
+  transition: transform 0.25s ease, visibility 0.25s ease;
+  overflow-y: auto;
 }
 aside img{
   width: 200px;
+}
+.sidebar-toggle,
+.sidebar-close,
+.sidebar-overlay {
+  display: none;
 }
 ul{
   margin-top: 20px;
