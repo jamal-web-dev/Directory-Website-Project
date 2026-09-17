@@ -44,11 +44,11 @@ h2{
 .popular-listing-section .container article, .event-container article{
     animation-name: blur-in;
     animation-timeline: view();
-    animation-range: entry 0% cover 20%;
+    animation-range: entry 0% cover 10%;
     animation-fill-mode: both;
 }
 .popular-listing-section .container article:nth-child(odd), .event-container article:nth-child(odd){
-     animation-range: entry 0% cover 35%;
+     animation-range: entry 0% cover 20%;
 }
 
 
@@ -106,7 +106,7 @@ h2{
         /* transform: translateY(100px); */
     }
     50%{
-        filter: blur(80px) grayscale(1);
+        filter: blur(10px) grayscale(1);
     }
     100%{
         opacity: 1;

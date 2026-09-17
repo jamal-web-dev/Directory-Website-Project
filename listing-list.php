@@ -1,39 +1,25 @@
+<?php
+    require "php_scripts/auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ListingHub - Business Directory & Listing Website</title>
+    <title>ListingHub - My Listings</title>
+    <link rel="shortcut icon" href="images/general-images/listinghub-favicon.png" type="image/x-icon">
     <!-- CSS LINK -->
-    <link rel="stylesheet" href="../styles/general.css">
-    <link rel="stylesheet" href="../styles/animations.css">
-    <link rel="stylesheet" href="../styles/dashboard.css">
-    <link rel="stylesheet" href="../styles/responsiveness/dashboard.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/responsiveness/dashboard.css">
     <!-- GOOGLE FONTS LINK -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <button class="sidebar-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dashboard-sidebar">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-        <h2>Welcome Jamal</h2>
-    </header>
-    <aside id="dashboard-sidebar" aria-label="Dashboard navigation">
-        <button class="sidebar-close" type="button" aria-label="Close navigation menu">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
-        </button>
-        <img src="../images/general-images/logo-white.svg" alt="">
-        <ul>
-            <a href="" class="active"><li>🛖 Dashboard</li></a>
-            <a href=""><li>📫 Post Listing</li></a>
-            <a href=""><li>📃 Listings</li></a>
-            <a href=""><li>👤 profile</li></a>
-            <a href=""><li>📲 Logout</li></a>
-        </ul>
-    </aside>
+    <?php include "includes/sidebar.php" ?>
     <div class="sidebar-overlay" aria-hidden="true"></div>
     <main>
         <div class="recent-listings">
@@ -70,6 +56,6 @@
             </div>
         </div>
     </main>
-    <script src="../src/dashboard.js"></script>
+    <script src="src/dashboard.js"></script>
 </body>
 </html>

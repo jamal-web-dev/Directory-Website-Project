@@ -1,17 +1,13 @@
-@media (width <= 1340px){
-  .statistics-container{
-    grid-template-columns: repeat(2,minmax(239px, 1fr));
+@media (width <= 1340px) {
+  .statistics-container {
+    grid-template-columns: repeat(2, minmax(239px, 1fr));
   }
 }
-@media (width <= 1074px){
-  .container .card{
+@media (width <= 1074px) {
+  .container .card {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
-  }
-  .card .listing-details{
-  }
-    .card .action{
   }
 }
 
@@ -23,6 +19,18 @@
   }
   header h2 {
     font-size: 1.35rem;
+  }
+  header {
+    padding: 0 20px;
+  }
+  header > a {
+    display: none;
+  }
+  .header-copy {
+    margin-left: 14px;
+  }
+  .header-copy span {
+    font-size: 9px;
   }
   .sidebar-toggle,
   .sidebar-close {
@@ -76,7 +84,9 @@
     visibility: hidden;
     opacity: 0;
     background: rgba(0, 0, 0, 0.42);
-    transition: opacity 0.25s ease, visibility 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
   }
   .sidebar-overlay.is-visible {
     visibility: visible;
@@ -97,6 +107,15 @@
   }
   .statistics-container {
     grid-template-columns: 1fr;
+  }
+  .recent-listings {
+    margin-top: 20px;
+  }
+  .recent-listings .heading {
+    padding: 18px 16px;
+  }
+  .container .card {
+    padding: 18px 16px;
   }
   .card .listing-details {
     flex-direction: column;

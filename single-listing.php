@@ -1,73 +1,41 @@
+<?php require_once "php_scripts/dbconnect.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Listing Page: Restaurant</title>
-    <link rel="stylesheet" href="../styles/general.css">
-    <link rel="stylesheet" href="../styles/single-listing.css">
-    <link rel="stylesheet" href="../styles/responsiveness/single-lis-res.css">
+    <link rel="shortcut icon" href="images/general-images/listinghub-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/single-listing.css">
+    <link rel="stylesheet" href="styles/responsiveness/single-lis-res.css">
     <!-- GOOGLE FONTS LINK -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-     <header>
-        <nav class="first-nav">
-            <div class="logo"> 
-                <img src="../images/general-images/logo-white.svg" alt="logo">
-            </div>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="listing-page.html">Listings</a></li>
-                <li><a href="dashboard.html">User Dashboard</a></li>
-            </ul>
-        </nav> 
-        <nav class="second-nav">
-            <ul>
-                <li class="login-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="me-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path></svg>
-                    <a href="pages/login-signup.html">SignUp or SignIn</a>
-                </li>
-                <button><a href="">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path></svg>
-                    Add Listing
-                </a></button>
-            </ul>
-        </nav>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="pages/listing-page.html">Listings</a></li>
-                <li><a href="pages/dashboard.html">User Dashboard</a></li>
-            </ul>
-            <ul>
-                <li class="login-link">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="me-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"></path><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"></path></svg>
-                    <a href="pages/login-signup.html">SignUp or SignIn</a>
-                </li>
-                <button><a href="">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path></svg>
-                    Add Listing
-                </a></button>
-            </ul>
-        </nav>
-        <div class="menu-icon">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="me-1 align-self-center" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"></path></svg>
-        </div>
-    </header>
+     <?php include "includes/header.php" ?>
+         <?php 
+            if(isset($_GET["listingId"]) && !empty($_GET["listingId"])){
+                $listingId = (int)$_GET["listingId"];
+                $stmt = " SELECT listings.* , categories.category_name, users.phone, users.firstname, users.lastname, users.email FROM listings INNER JOIN categories ON listings.listing_category = categories.id  INNER JOIN users ON users.id = listings.owner_id WHERE listings.id = $listingId";
+                $getListingInfo = mysqli_query($connect, $stmt);
+                $listing = mysqli_fetch_assoc($getListingInfo);
+            }
+            
+         ?>
         <section class="heading-section" 
-            style="background-image: linear-gradient(rgba(0, 0, 0, 0.145), rgba(0, 0, 0, 0.824)), url(../images/Index-Images/list-1-D-r_BTD7.jpg);">
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.145), rgba(0, 0, 0, 0.824)), url(uploads/<?=$listing['listing_image']?>);">
             <div class="container">
                 <div class="text-child">
                     <div class="img-box">
-                        <img src="../images/Index-Images/team-1-Dk2b_Pxk.jpg" alt="">
+                        <img src="uploads/<?=$listing['listing_image']?>" alt="">
                     </div>
                     <div class="content-box">
-                        <h2 class="bus-name">Liman Restaurant</h2>
+                        <h2 class="bus-name"><?=ucwords($listing['listing_name'])?></h2>
                         <ul>
-                            <li class="address">Old Paris, France</li>
+                            <li class="address"><?=ucfirst($listing['listing_address'])?></li>
                             <li class="rating-star">⭐⭐⭐⭐⭐</li>
                         </ul>
                     </div>
@@ -100,7 +68,7 @@
                             <span class="icon"></span>
                         </div>
                         <div class="content">
-                            
+                            <?=ucfirst($listing['listing_about'])?>
                         </div>
                     </div>
                     <div class="about-aurtor display-on-mobile" >
@@ -109,20 +77,20 @@
                         <div class="aurtor-info-box">
                             <img src="../images/Index-Images/team-1-Dk2b_Pxk.jpg" alt="autor" class="autor-img">
                             <span>Added By</span>
-                            <h4>Shree K. Patel</h4>
+                            <h4><?=ucfirst($listing['firstname']) ." " . ucfirst($listing['lastname'])?></h4>
                         </div>
                         <ul>
                             <li>
                                 <span>Email</span>
-                                <a href="" class="busEmail">shree.patel@gmail.com</a>
+                                <a href="" class="busEmail"><?=$listing['email']?></a>
                             </li>
                             <li>
                                 <span>Phone No.</span>
-                                <a href="" class="busPhone">+41 256 254 5487</a>
+                                <a href="" class="busPhone"><?=$listing['phone']?></a>
                             </li>
                             <li>
                                 <span>Website</span>
-                                <a href="" class="busWeb">www.webstie.com</a>
+                                <a href="" class="busWeb"><?=$listing['listing_website']?></a>
                             </li>
                         </ul>
                     </div>
@@ -146,20 +114,20 @@
                         <div class="aurtor-info-box">
                             <img src="../images/Index-Images/team-1-Dk2b_Pxk.jpg" alt="autor" class="autor-img">
                             <span>Added By</span>
-                            <h4>Shree K. Patel</h4>
+                            <h4><?=ucfirst($listing['firstname']) ." " . ucfirst($listing['lastname'])?></h4>
                         </div>
                         <ul>
                             <li>
                                 <span>Email</span>
-                                <a href="" class="busEmail">shree.patel@gmail.com</a>
+                                <a href="" class="busEmail"><?=$listing['email']?></a>
                             </li>
                             <li>
                                 <span>Phone No.</span>
-                                <a href="" class="busPhone">+41 256 254 5487</a>
+                                <a href="" class="busPhone"><?=$listing['phone']?></a>
                             </li>
                             <li>
                                 <span>Website</span>
-                                <a href="" class="busWeb">www.webstie.com</a>
+                                <a href="" class="busWeb"><?=$listing['listing_website']?></a>
                             </li>
                         </ul>
                     </div>
@@ -211,7 +179,7 @@
             </div>
     </footer>
 
-    <script src="../src/general.js"></script>
-    <script src="../src/single-linsting.js"></script>
+    <script src="src/general.js"></script>
+    <script src="src/single-linsting.js"></script>
 </body>
 </html>

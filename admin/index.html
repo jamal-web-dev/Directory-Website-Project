@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ListingHub Admin - Dashboard</title>
+  <link rel="shortcut icon" href="../images/general-images/listinghub-favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <button class="sidebar-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="home-link" href="../index.php">View Website</a>
+    <div class="admin-welcome"><strong>Admin Dashboard</strong><span>Manage ListingHub</span></div>
+  </header>
+  <aside class="admin-sidebar" aria-label="Admin navigation">
+    <button class="sidebar-close" type="button" aria-label="Close navigation menu">×</button>
+    <a class="brand" href="index.html"><img src="../images/general-images/logo-white.svg" alt="ListingHub"></a>
+    <p class="nav-label">Administration</p>
+    <nav><a class="active" href="index.html"><span>▦</span> Dashboard</a><a href="listings.html"><span>☷</span> All Listings</a><a href="#users"><span>♙</span> Users</a></nav>
+    <a class="logout-link" href="../logout.php"><span>⇥</span> Logout</a>
+  </aside>
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <main class="admin-main">
+    <section class="page-intro"><div><p class="eyebrow">Overview</p><h1>Welcome back, Admin</h1><p>Here is what is happening across your directory.</p></div><a class="primary-button" href="listings.html">Manage Listings <span>→</span></a></section>
+    <section class="stats-grid" aria-label="Directory statistics">
+      <article class="stat-card total"><div class="stat-icon">▤</div><div><p>Total Listings</p><h2>1,248</h2><small><b>+12%</b> from last month</small></div></article>
+      <article class="stat-card users"><div class="stat-icon">♙</div><div><p>Total Users</p><h2>856</h2><small><b>+8%</b> from last month</small></div></article>
+      <article class="stat-card active-stat"><div class="stat-icon">✓</div><div><p>Active Listings</p><h2>1,103</h2><small><b>88.4%</b> of all listings</small></div></article>
+      <article class="stat-card pending"><div class="stat-icon">◷</div><div><p>Pending Listings</p><h2>145</h2><small><b>23</b> awaiting review</small></div></article>
+    </section>
+    <section class="content-panel" id="users"><div class="panel-heading"><div><h2>Recent Listings</h2><p>Newest submissions awaiting your attention.</p></div><a href="listings.html">View all listings →</a></div>
+      <div class="recent-list">
+        <article class="recent-item"><img src="../images/Index-Images/list-1-D-r_BTD7.jpg" alt="The Big Bumble Gym"><div class="listing-copy"><h3>The Big Bumble Gym</h3><p>Fitness · 410 Apex Avenue, California</p><span class="status active-status">Active</span></div><a href="listings.html" class="text-button">Review</a></article>
+        <article class="recent-item"><img src="../images/Index-Images/list-2-L5iYowFN.jpg" alt="The Coffee Corner"><div class="listing-copy"><h3>The Coffee Corner</h3><p>Restaurant · 22 King Street, New York</p><span class="status pending-status">Pending</span></div><a href="listings.html" class="text-button">Review</a></article>
+        <article class="recent-item"><img src="../images/Index-Images/list-3-CqUr9x06.jpg" alt="Urban Living Spaces"><div class="listing-copy"><h3>Urban Living Spaces</h3><p>Real Estate · 8 Green Road, Chicago</p><span class="status active-status">Active</span></div><a href="listings.html" class="text-button">Review</a></article>
+      </div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ListingHub Admin - All Listings</title>
+    <link
+      rel="shortcut icon"
+      href="../images/general-images/listinghub-favicon.png"
+      type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <button
+        class="sidebar-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+        <span></span><span></span><span></span></button
+      ><a class="home-link" href="../index.php">View Website</a>
+      <div class="admin-welcome">
+        <strong>Admin Dashboard</strong><span>Manage ListingHub</span>
+      </div>
+    </header>
+    <aside class="admin-sidebar" aria-label="Admin navigation">
+      <button
+        class="sidebar-close"
+        type="button"
+        aria-label="Close navigation menu">
+        ×</button
+      ><a class="brand" href="index.html"
+        ><img src="../images/general-images/logo-white.svg" alt="ListingHub"
+      /></a>
+      <p class="nav-label">Administration</p>
+      <nav>
+        <a href="index.html"><span>▦</span> Dashboard</a
+        ><a class="active" href="listings.html"><span>☷</span> All Listings</a
+        ><a href="index.html#users"><span>♙</span> Users</a>
+      </nav>
+      <a class="logout-link" href="../logout.php"><span>⇥</span> Logout</a>
+    </aside>
+    <div class="sidebar-overlay" aria-hidden="true"></div>
+    <main class="admin-main">
+      <section class="page-intro">
+        <div>
+          <p class="eyebrow">Directory Management</p>
+          <h1>All Listings</h1>
+          <p>Review listings and update their display status.</p>
+        </div>
+      </section>
+      <section class="content-panel listings-panel">
+        <div class="toolbar">
+          <label class="search-box"
+            >⌕
+            <input
+              type="search"
+              placeholder="Search listings"
+              aria-label="Search listings" /></label
+          ><select aria-label="Filter listings">
+            <option>All statuses</option>
+            <option>Active</option>
+            <option>Pending</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Listing</th>
+                <th>Category</th>
+                <th>Submitted by</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Listing">
+                  <div class="table-listing">
+                    <img
+                      src="../images/Index-Images/list-1-D-r_BTD7.jpg"
+                      alt="" />
+                    <div>
+                      <strong>The Big Bumble Gym</strong
+                      ><small>410 Apex Avenue, California</small>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="Category">Fitness</td>
+                <td data-label="Submitted by">Ava Johnson</td>
+                <td data-label="Status">
+                  <span class="status active-status">Active</span>
+                </td>
+                <td data-label="Action">
+                  <button
+                    class="edit-button"
+                    type="button"
+                    data-name="The Big Bumble Gym"
+                    data-status="active">
+                    Edit status
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Listing">
+                  <div class="table-listing">
+                    <img
+                      src="../images/Index-Images/list-2-L5iYowFN.jpg"
+                      alt="" />
+                    <div>
+                      <strong>The Coffee Corner</strong
+                      ><small>22 King Street, New York</small>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="Category">Restaurant</td>
+                <td data-label="Submitted by">Noah Williams</td>
+                <td data-label="Status">
+                  <span class="status pending-status">Pending</span>
+                </td>
+                <td data-label="Action">
+                  <button
+                    class="edit-button"
+                    type="button"
+                    data-name="The Coffee Corner"
+                    data-status="pending">
+                    Edit status
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Listing">
+                  <div class="table-listing">
+                    <img
+                      src="../images/Index-Images/list-3-CqUr9x06.jpg"
+                      alt="" />
+                    <div>
+                      <strong>Urban Living Spaces</strong
+                      ><small>8 Green Road, Chicago</small>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="Category">Real Estate</td>
+                <td data-label="Submitted by">Mia Brown</td>
+                <td data-label="Status">
+                  <span class="status active-status">Active</span>
+                </td>
+                <td data-label="Action">
+                  <button
+                    class="edit-button"
+                    type="button"
+                    data-name="Urban Living Spaces"
+                    data-status="active">
+                    Edit status
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Listing">
+                  <div class="table-listing">
+                    <img
+                      src="../images/Index-Images/list-4-DxnoSNTH.jpg"
+                      alt="" />
+                    <div>
+                      <strong>Glow Beauty Studio</strong
+                      ><small>14 Victoria Lane, Boston</small>
+                    </div>
+                  </div>
+                </td>
+                <td data-label="Category">Beauty</td>
+                <td data-label="Submitted by">Liam Davis</td>
+                <td data-label="Status">
+                  <span class="status pending-status">Pending</span>
+                </td>
+                <td data-label="Action">
+                  <button
+                    class="edit-button"
+                    type="button"
+                    data-name="Glow Beauty Studio"
+                    data-status="pending">
+                    Edit status
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <dialog class="status-dialog">
+      <form method="dialog">
+        <button class="dialog-close" value="cancel" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Listing status</p>
+        <h2>Edit <span class="listing-name"></span></h2>
+        <p>Choose how this listing should appear in the directory.</p>
+        <label for="listing-status">Status</label
+        ><select id="listing-status">
+          <option value="active">Active</option>
+          <option value="pending">Pending</option>
+        </select>
+        <div class="dialog-actions">
+          <button value="cancel" class="cancel-button">Cancel</button
+          ><button value="default" class="primary-button save-status">
+            Save changes
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>

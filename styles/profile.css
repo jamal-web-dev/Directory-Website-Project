@@ -1,32 +1,36 @@
-.name, .phone-email {
+.name,
+.phone-email {
   display: flex;
   gap: 15px;
 }
-input, select, textarea{
+input,
+select,
+textarea {
   width: 100%;
   padding: 8px 12px;
   outline: none;
-  border-radius: 4px; 
+  border-radius: 4px;
   border: 1px solid rgba(178, 178, 178, 0.511);
 }
-h2{
+h2 {
   text-align: center;
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   background-color: white;
-  box-shadow: 0 0 9px rgba(178, 178, 178, 0.511);
-  width: 60%;
+  box-shadow: var(--shadow-soft);
+  width: min(720px, calc(100% - 32px));
   margin-inline: auto;
-  border-radius: 10px;
-  margin-top: 50px;
-  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-top: 110px;
+  padding: 34px;
 }
-.btn{
-  background-color: var(--red);
-  border:None; 
+.btn {
+  background-color: var(--accent);
+  border: None;
   cursor: pointer;
   color: white;
   font-weight: 500;

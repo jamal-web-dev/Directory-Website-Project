@@ -135,7 +135,7 @@ function saveListingImgToLocalStorage(img){
     localStorage.setItem("listinImage", JSON.stringify(img) )
 }
 function moveToSingleListingPage(id){
-    window.location = `single-listing.html?id=${id}`;
+    window.location = `single-listing.php?id=${id}`;
 }
 listingContainer.addEventListener("click", (e)=>{
     const id = e.target.dataset.id;

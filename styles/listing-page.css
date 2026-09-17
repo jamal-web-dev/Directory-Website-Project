@@ -1,19 +1,52 @@
-header{
-    background-color: var(--dark-200);
+header {
+  background-color: var(--dark-200);
 }
-.listing-section{
-    padding-top: 150px;
+.listing-section {
+  padding-top: 150px;
 }
-.more-button{
-    background-color: var(--red-hover);
-    padding: 8px 16px;
-    color: white;
-    display: block;
-    margin-inline: auto;
-    border: none;
-    border-radius: 4px;
-    font-size: 17px;
-    cursor: pointer;
-    margin-top: 38px;
+.more-button {
+  background-color: var(--red-hover);
+  padding: 8px 16px;
+  color: white;
+  display: block;
+  margin-inline: auto;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 38px;
+}
+.listing_holder {
+  /* border: solid red; */
+  position: relative;
+  padding-top: 22px;
+}
+.result-mesg {
+  position: absolute;
+  bottom: 100%;
+}
 
+.listing-section {
+  min-height: 70vh;
+  padding: 142px clamp(20px, 8vw, 110px) 90px;
+  background: var(--page);
+}
+
+.listing-section .listing_holder {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.listing-section .more-button {
+  background: var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(199, 31, 55, 0.16);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.listing-section .more-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
 }
